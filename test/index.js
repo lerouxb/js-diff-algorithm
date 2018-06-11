@@ -64,6 +64,18 @@ internals.testCases = [
         'foo\nbar',
         'foo bar',
         'foo<del>\n</del><ins> </ins>bar'
+    ],
+    [
+        'Lots of words',
+        'Lorem ipsum (dolor sit amet), consectetur',
+        'Lorem: ipsum (dolor changed amet), consectetur',
+        '<del>Lorem</del><ins>Lorem:</ins> ipsum (dolor <del>sit</del><ins>changed</ins> amet), consectetur'
+    ],
+    [
+        'Lots of words with duplicates',
+        'Lorem ipsum ipsum (dolor sit amet), consectetur',
+        'Lorem: ipsum (dolor dolor changed amet), consectetur',
+        '<del>Lorem ipsum</del><ins>Lorem:</ins> ipsum (dolor <del>sit</del><ins>dolor changed</ins> amet), consectetur'
     ]
 ];
 
