@@ -1,0 +1,18 @@
+{
+  "name": "js-diff-algorithm",
+  "version": "1.0.0",
+  "description": "John Resig's JavaScript diff algorithm modernised and as an npm package.",
+  "main": "index.js",
+  "scripts": {
+    "test": "lab -t 100 -v -L",
+    "lint": "lab -f -d -L"
+  },
+  "keywords": [
+    "diff"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "code": "^5.2.0",
+    "lab": "^15.5.0"
+  }
+}
