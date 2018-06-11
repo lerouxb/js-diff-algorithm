@@ -1,6 +1,6 @@
 {
   "name": "js-diff-algorithm",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "John Resig's JavaScript diff algorithm modernised and as an npm package.",
   "main": "index.js",
   "scripts": {
