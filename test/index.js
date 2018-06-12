@@ -79,6 +79,19 @@ internals.testCases = [
     ]
 ];
 
+internals.dictionary = 'ad adipiscing aliqua aliquip amet anim aute cillum commodo consectetur consequat culpa cupidatat deserunt do dolor dolore duis ea eiusmod elit enim esse est et eu ex excepteur exercitation fugiat id in incididunt ipsum irure labore laboris laborum lorem magna minim mollit nisi non nostrud nulla occaecat officia pariatur proident qui quis reprehenderit sed sint sit sunt tempor ullamco ut velit veniam voluptate'.split(' ');
+
+internals.makeText = function () {
+
+    const words = [];
+    const length = Math.floor(Math.random() * 10);
+    const dictionarySize = internals.dictionary.length;
+    for (let i = 0; i < length; ++i) {
+        words.push(internals.dictionary[Math.floor(Math.random() * dictionarySize)]);
+    }
+    return words.join(' ');
+};
+
 describe('js-diff-algorithm', () => {
 
     for (const [name, left, right, expected] of internals.testCases) {
@@ -88,5 +101,15 @@ describe('js-diff-algorithm', () => {
             expect(Diff(left, right)).to.equal(expected);
         });
     }
+
+    it.only('deals with randomness', () => {
+
+        for (let i = 0; i < 1000000; ++i) {
+            const left = internals.makeText();
+            const right = internals.makeText();
+            const diff = Diff(left, right);
+            console.log({ left, right, diff });
+        }
+    });
 });
 
